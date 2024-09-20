@@ -4,3 +4,8 @@
     name: ssh
     state: restarted
 
+- name: Restart iptables
+  systemd:
+    name: iptables
+    state: restarted
+

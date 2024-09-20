@@ -44,8 +44,6 @@
     src: ssh_banner
     dest: /etc/issue
 
-
-
     
 - name: Update and upgrade apt packages
   apt:
@@ -60,8 +58,14 @@
     force_apt_get: yes
     update_cache: yes
  
+- name: Make iptables configuration file
+  template:
+    src: iptables.j2
+    dest: /etc/iptables/rules.v4
 
-
-
-
-
+- name: restore iptables state from a file
+  community.general.iptables_state:
+    state: restored
+    path: /etc/iptables/rules.v4
+    noflush: true
+  notify: Restart iptables
