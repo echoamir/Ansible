@@ -1,1 +1,5 @@
 ---
+docker:
+  log_max_file: "5"
+  log_max_size: 100m
+  registry_mirror: https://docker.arvancloud.ir

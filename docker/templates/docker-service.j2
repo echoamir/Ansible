@@ -1,0 +1,8 @@
+ExecStart=
+ExecStart=/usr/bin/dockerd \
+{% if docker.log_max_size is defined %}
+    --log-opt max-size={{ docker.log_max_size }} --log-opt max-file={{ docker.log_max_file }} \
+{% endif %}
+{% if docker.registry_mirror is defined %}
+    --registry-mirror={{ docker.registry_mirror }}
+{% endif %}

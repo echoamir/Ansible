@@ -44,6 +44,17 @@
     groups: docker
     append: true
 
+- name: Make docker configuration file
+  template:
+    src: docker-service.j2
+    dest: /etc/systemd/system/docker.service.d/override.conf
+  notify: restart docker
+
+- name: Restart service docker and daemon-reload to pick up config changes
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: yes
+    name: docker
 
 - name: Get the latest release tag from Docker Compose GitHub
   uri:
