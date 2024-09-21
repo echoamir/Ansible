@@ -26,18 +26,16 @@ packages:
   - wget
   - git
   - vim
-  - nano
+  - libpam-tmpdir
   - bash-completion
   - curl
   - htop
-  - iftop
+  - apt-listbugs
   - jq
   - ncdu
   - unzip
   - net-tools
   - dnsutils
-  - atop
-  - sudo
   - ntp
   - fail2ban
   - software-properties-common
@@ -46,7 +44,6 @@ packages:
   - telnet
   - axel
   - iptables-persistent
-  - ntp
   - auditd
   - libpwquality-common
   - cracklib-runtime
