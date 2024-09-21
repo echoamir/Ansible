@@ -42,7 +42,7 @@
 - name: Copy ssh banner file
   copy:
     src: ssh_banner
-    dest: /etc/issue
+    dest: /etc/issue.net
 
     
 - name: Update and upgrade apt packages
