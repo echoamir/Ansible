@@ -19,7 +19,7 @@ sshd_config:
   MaxSessions: "2"
   LogLevel: "VERBOSE"
   ListenAddress: "0.0.0.0"
-
+  Banner: "/etc/issue"
 
 packages:
   - sysstat
