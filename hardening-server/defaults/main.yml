@@ -47,4 +47,4 @@ packages:
   - auditd
   - libpwquality-common
   - cracklib-runtime
-
+  - nmap
