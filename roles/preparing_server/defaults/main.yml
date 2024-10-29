@@ -1,0 +1,112 @@
+---
+sysctl_config:
+  net.ipv4.ip_forward: "1"
+  net.ipv4.ip_local_reserved_ports: "30000-32767"
+  vm.max_map_count: "262144"
+  net.ipv4.ip_nonlocal_bind: "1"
+  fs.file-max: "1500000"
+  fs.nr_open: "1500000"
+  vm.swappiness: "1"
+  vm.min_free_kbytes: "65536"
+  net.ipv4.tcp_synack_retries: "2"
+  net.ipv4.ip_local_port_range: "1024 65535"
+  net.ipv4.tcp_rfc1337: "1"
+  net.ipv4.tcp_fin_timeout: "10"
+  net.ipv4.tcp_keepalive_time: "300"
+  net.ipv4.tcp_keepalive_probes: "5"
+  net.ipv4.tcp_keepalive_intvl: "15"
+  net.core.rmem_max: "16777216"
+  net.core.wmem_max: "16777216"
+  net.core.rmem_default: "16777216"
+  net.core.wmem_default: "16777216"
+  net.core.somaxconn: "4096"
+  net.netfilter.nf_conntrack_max: "32768000"
+  net.netfilter.nf_conntrack_tcp_timeout_time_wait: "30"
+  net.core.netdev_max_backlog: "65536"
+  net.ipv4.tcp_max_syn_backlog: "65536"
+  net.core.optmem_max: "25165824"
+  net.ipv4.tcp_max_tw_buckets: "1440000"
+  net.ipv4.tcp_tw_reuse: "1"
+  net.netfilter.nf_conntrack_tcp_timeout_established: "900"
+  net.netfilter.nf_conntrack_tcp_timeout_close_wait: "10"
+  net.netfilter.nf_conntrack_tcp_timeout_syn_recv: "30"
+  net.ipv4.tcp_slow_start_after_idle: "0"
+  net.ipv6.conf.all.disable_ipv6: "0"
+  net.ipv6.conf.default.disable_ipv6: "0"
+  net.ipv6.conf.lo.disable_ipv6: "0"
+  net.bridge.bridge-nf-call-iptables: "1"
+  net.bridge.bridge-nf-call-ip6tables: "1"
+  fs.suid_dumpable: "0"
+  kernel.core_uses_pid: "1"
+  kernel.dmesg_restrict: "1"
+  kernel.kptr_restrict: "2"
+  kernel.sysrq: "0"
+  net.ipv4.conf.all.log_martians: "1"
+  net.ipv6.conf.all.accept_redirects: "1"
+  net.ipv6.conf.default.accept_redirects: "1"
+  net.ipv4.conf.all.forwarding: "1"
+  net.ipv4.conf.all.send_redirects: "0"
+  net.ipv4.conf.default.accept_redirects: "0"
+  net.ipv4.conf.default.accept_source_route: "0"
+  net.ipv4.conf.default.log_martians: "1"
+  net.ipv4.conf.all.accept_redirects: "0"
+  net.ipv4.conf.all.rp_filter: "1"
+  kernel.yama.ptrace_scope: "1"
+  net.ipv4.tcp_rmem: "4096 87380 16777216"
+  net.ipv4.tcp_wmem: "4096 65536 16777216"
+  kernel.printk: "3 4 1 7"
+  dev.tty.ldisc_autoload: "0"
+  fs.protected_fifos: "2"
+
+
+sshd_config:
+  PermitRootLogin: "no"
+  Port: "2222"
+  PubkeyAuthentication: "yes"
+  PasswordAuthentication: "no"
+  AllowAgentForwarding: "no"
+  AllowTcpForwarding: "no"
+  X11Forwarding: "no"
+  PrintMotd: "no"
+  TCPKeepAlive: "no"
+  Compression: "no"
+  ClientAliveCountMax: "2"
+  AllowUsers: "deployer"
+  AllowGroups: "deployer"
+  UsePAM: "yes"
+  ChallengeResponseAuthentication: "no"
+  MaxAuthTries: "3"
+  MaxSessions: "2"
+  LogLevel: "VERBOSE"
+  ListenAddress: "0.0.0.0"
+
+
+packages:
+  - sysstat
+  - wget
+  - git
+  - vim
+  - nano
+  - bash-completion
+  - curl
+  - htop
+  - iftop
+  - jq
+  - ncdu
+  - unzip
+  - net-tools
+  - dnsutils
+  - atop
+  - sudo
+  - ntp
+  - fail2ban
+  - software-properties-common
+  - apache2-utils
+  - tcpdump
+  - telnet
+  - axel
+  - iptables-persistent
+  - ntp
+  - auditd
+  - libpwquality-common
+  - cracklib-runtime
