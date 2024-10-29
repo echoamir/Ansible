@@ -1,0 +1,14 @@
+---
+- name: install configuration
+  import_tasks: configuration.yml
+  tags: install_configuration
+
+
+- name: install docker
+  import_tasks: docker.yml
+  tags: install_docker
+
+- name: config ssh
+  import_tasks: hardening-server.yml
+  tags: install_hardening-server
+
