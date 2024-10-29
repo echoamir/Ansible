@@ -1,0 +1,6 @@
+---
+- name: Hardening
+  hosts: web-service
+  gather_facts: true
+  roles:
+    - preparing_server 
