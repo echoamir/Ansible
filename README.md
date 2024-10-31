@@ -11,7 +11,7 @@ This Ansible playbook is designed to:
 
 ## Setup
 
-   git clone https://github.com/echoamir/Ansible.git
-   cd Ansible/roles
-   config your inventory file
-   ansible-playbook playboook.yml
+  1- git clone https://github.com/echoamir/Ansible.git
+  2- cd Ansible/roles
+  3- config your inventory file
+  4- ansible-playbook playboook.yml
