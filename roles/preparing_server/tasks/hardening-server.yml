@@ -1,7 +1,7 @@
 ---
 - name: Create a login user
   ansible.builtin.user:
-      name: deployer
+      name: maratus
       password: '$6$iMNClsUEOVAFcGs0$f/siPQ9SnhjWRekhTLRxZIZWWmWnz5lmlfQ846znys9nyBujw1gDIyK8nc0IHdVesHYBGFZyhO3qRlvGWch4p/'
       groups: 
        - sudo
@@ -9,29 +9,29 @@
       shell: /bin/bash      
       system: no            
       createhome: yes        
-      home: /home/deployer
+      home: /home/maratus
   
 - name: Creates directory
   ansible.builtin.file:
-    path: /home/deployer/.ssh
+    path: /home/maratus/.ssh
     state: directory
     mode: '0700'
-    owner: deployer
+    owner: maratus
 
 - name: Create a new file with permissions
   ansible.builtin.file:
-      path: "/home/deployer/.ssh/authorized_keys"
+      path: "/home/maratus/.ssh/authorized_keys"
       state: touch
       mode: '0600'
 
 - name: Copy SSH key to authorized_keys
   ansible.builtin.lineinfile:
-    path: /home/deployer/.ssh/authorized_keys
+    path: /home/maratus/.ssh/authorized_keys
     line: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG/bKFqO5ic6BkUX6E4RN0L612KGKp1drnOZPGgCWUvb amir@AmirKolahi"
     create: yes
     mode: '0600'
-    owner: deployer
-    group: deployer
+    owner: maratus
+    group: maratus
     state: present
     
 - name: Setup alternate sshd config
