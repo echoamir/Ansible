@@ -44,11 +44,12 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: Add sudo group to Docker group
-  ansible.builtin.group:
-    name: docker
-    members: "@sudo"
+- name: Ensure maratus is in Docker group
+  ansible.builtin.user:
+    name: "maratus"
+    groups: docker
     append: true
+
 
   notify: restart docker
 
