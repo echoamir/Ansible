@@ -1,3 +1,29 @@
+# Installation Guide for Ansible on Debian
+
+This guide covers the installation of Ansible on a Debian-based system. Follow the steps below to install Ansible.
+
+## Prerequisites
+
+Make sure you have root or `sudo` privileges before starting the installation process.
+
+## Step 1: Install Dependencies and Configure Ansible Repository
+
+Install the required dependencies by running the following command:
+
+```bash
+sudo apt install -y software-properties-common
+```
+
+```bash
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+```
+```bash
+sudo apt update
+```
+```bash
+sudo apt install -y ansible
+```
+
 # Ansible Playbook for Server Hardening and Docker Installation
 
 This Ansible playbook is designed to:
