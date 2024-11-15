@@ -69,7 +69,13 @@
   template:
     src: iptables.j2
     dest: /etc/iptables/rules.v4
-    
+
+- name: Ensure maratus is in Docker group
+  ansible.builtin.user:
+    name: "maratus"
+    groups: docker
+    append: true
+
 - name: Restart ssh service
   service:
     name: ssh
