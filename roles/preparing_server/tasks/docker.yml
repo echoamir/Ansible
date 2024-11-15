@@ -44,13 +44,6 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: Ensure maratus is in Docker group
-  ansible.builtin.user:
-    name: "maratus"
-    groups: docker
-    append: true
-
-
   notify: restart docker
 
 - name: Restart service docker and daemon-reload to pick up config changes
