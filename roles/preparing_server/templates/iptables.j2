@@ -50,6 +50,8 @@ COMMIT
 {% endif %}
 
 -A CHECK_INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A CHECK_INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A CHECK_INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A CHECK_INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 
 {% if iptables.udp_port_access is defined %}
