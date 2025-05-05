@@ -24,6 +24,10 @@ sudo apt update
 sudo apt install -y ansible
 ```
 
+```bash
+ansible-galaxy role init --init-path roles preparing_server
+```
+
 # Ansible Playbook for Server Hardening and Docker Installation
 
 This Ansible playbook is designed to:
