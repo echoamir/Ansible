@@ -96,8 +96,7 @@ packages:
   - unzip
   - net-tools
   - dnsutils
-  - atop
-  - sudo
+  - iotop
   - ntp
   - fail2ban
   - software-properties-common
